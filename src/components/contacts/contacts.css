@@ -1,0 +1,105 @@
+.contacts {
+  padding: 6rem 2rem;
+  background-color: #fff;
+}
+
+.contacts__title {
+  font-size: 2.5rem !important;
+  text-align: center;
+  margin-bottom: 1rem !important;
+  color: #1a1a1a !important;
+  font-weight: 700 !important;
+}
+
+.contacts__subtitle {
+  text-align: center;
+  color: #666 !important;
+  margin-bottom: 4rem !important;
+  font-size: 1.2rem !important;
+  font-weight: 400 !important;
+}
+
+.contact__card {
+  padding: 2rem 1.5rem !important;
+  text-align: center;
+  height: 100%;
+  transition: all 0.3s ease !important;
+  cursor: pointer;
+  background-color: #f9f9f9 !important;
+  border-radius: 12px !important;
+}
+
+.contact__card:hover {
+  background-color: #2e7d32 !important;
+  transform: scale(1.05);
+}
+
+.contact__card:hover .contact__icon {
+  color: #fff !important;
+}
+
+.contact__card:hover .contact__label,
+.contact__card:hover .contact__value {
+  color: #fff !important;
+}
+
+.contact__icon-wrapper {
+  margin-bottom: 1rem;
+}
+
+.contact__icon {
+  font-size: 3rem !important;
+  color: #2e7d32 !important;
+  transition: color 0.3s ease;
+}
+
+.contact__label {
+  font-size: 0.95rem !important;
+  color: #999 !important;
+  margin-bottom: 0.5rem !important;
+  transition: color 0.3s ease;
+}
+
+.contact__value {
+  font-size: 1.1rem !important;
+  color: #1a1a1a !important;
+  font-weight: 600 !important;
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 960px) {
+  .contacts {
+    padding: 4rem 1.5rem;
+  }
+  
+  .contacts__title {
+    font-size: 2rem !important;
+  }
+  
+  .contacts__subtitle {
+    font-size: 1.1rem !important;
+    margin-bottom: 3rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .contacts {
+    padding: 3rem 1rem;
+  }
+  
+  .contacts__title {
+    font-size: 1.8rem !important;
+  }
+  
+  .contacts__subtitle {
+    font-size: 1rem !important;
+  }
+  
+  .contact__card {
+    padding: 1.5rem 1rem !important;
+  }
+  
+  .contact__icon {
+    font-size: 2.5rem !important;
+  }
+}

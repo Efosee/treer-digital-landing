@@ -1,0 +1,945 @@
+Директория - D:\Programming\treer-digital-landing\treer-digital-landing\src
+
+Файл - App.css
+Код:
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+Файл - App.jsx
+Код:
+import './App.css';
+import Header from './components/header/Header';
+import Intro from './components/intro/Intro';
+import Services from './components/services/Services';
+import Portfolio from './components/portfolio/Portfolio';
+import Contact from './components/contacts/Contacts';
+
+function App() {
+
+  return (
+    <>
+		<Header />
+		<Intro />
+		<Services />
+		<Portfolio />
+		<Contact />
+    </>
+  )
+}
+
+export default App
+
+
+Файл - index.css
+Код:
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+
+Файл - main.jsx
+Код:
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+
+
+Директория - D:\Programming\treer-digital-landing\treer-digital-landing\src\assets
+
+Директория - D:\Programming\treer-digital-landing\treer-digital-landing\src\components
+
+Директория - D:\Programming\treer-digital-landing\treer-digital-landing\src\components\contacts
+
+Файл - contacts.css
+Код:
+.contacts {
+  padding: 6rem 2rem;
+  background-color: #fff;
+}
+
+.contacts__title {
+  font-size: 2.5rem !important;
+  text-align: center;
+  margin-bottom: 1rem !important;
+  color: #1a1a1a !important;
+  font-weight: 700 !important;
+}
+
+.contacts__subtitle {
+  text-align: center;
+  color: #666 !important;
+  margin-bottom: 4rem !important;
+  font-size: 1.2rem !important;
+  font-weight: 400 !important;
+}
+
+.contact__card {
+  padding: 2rem 1.5rem !important;
+  text-align: center;
+  height: 100%;
+  transition: all 0.3s ease !important;
+  cursor: pointer;
+  background-color: #f9f9f9 !important;
+  border-radius: 12px !important;
+}
+
+.contact__card:hover {
+  background-color: #2e7d32 !important;
+  transform: scale(1.05);
+}
+
+.contact__card:hover .contact__icon {
+  color: #fff !important;
+}
+
+.contact__card:hover .contact__label,
+.contact__card:hover .contact__value {
+  color: #fff !important;
+}
+
+.contact__icon-wrapper {
+  margin-bottom: 1rem;
+}
+
+.contact__icon {
+  font-size: 3rem !important;
+  color: #2e7d32 !important;
+  transition: color 0.3s ease;
+}
+
+.contact__label {
+  font-size: 0.95rem !important;
+  color: #999 !important;
+  margin-bottom: 0.5rem !important;
+  transition: color 0.3s ease;
+}
+
+.contact__value {
+  font-size: 1.1rem !important;
+  color: #1a1a1a !important;
+  font-weight: 600 !important;
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 960px) {
+  .contacts {
+    padding: 4rem 1.5rem;
+  }
+  
+  .contacts__title {
+    font-size: 2rem !important;
+  }
+  
+  .contacts__subtitle {
+    font-size: 1.1rem !important;
+    margin-bottom: 3rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .contacts {
+    padding: 3rem 1rem;
+  }
+  
+  .contacts__title {
+    font-size: 1.8rem !important;
+  }
+  
+  .contacts__subtitle {
+    font-size: 1rem !important;
+  }
+  
+  .contact__card {
+    padding: 1.5rem 1rem !important;
+  }
+  
+  .contact__icon {
+    font-size: 2.5rem !important;
+  }
+}
+
+Файл - Contacts.jsx
+Код:
+import React from "react";
+import { Container, Typography, Box, Grid, Paper, Link } from "@mui/material";
+import PhoneIcon from '@mui/icons-material/Phone';
+import EmailIcon from '@mui/icons-material/Email';
+import TelegramIcon from '@mui/icons-material/Telegram';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import "./contacts.css";
+
+const contacts = [
+  { 
+    icon: <PhoneIcon className="contact__icon" />, 
+    label: "Телефон", 
+    value: "+7 (999) 888-77-66", 
+    link: "tel:+79998887766" 
+  },
+  { 
+    icon: <EmailIcon className="contact__icon" />, 
+    label: "Email", 
+    value: "info@treer.digital", 
+    link: "mailto:info@treer.digital" 
+  },
+  { 
+    icon: <TelegramIcon className="contact__icon" />, 
+    label: "Telegram", 
+    value: "@treer_agency", 
+    link: "https://t.me/treer_agency" 
+  },
+  { 
+    icon: <WhatsAppIcon className="contact__icon" />, 
+    label: "WhatsApp", 
+    value: "Написать", 
+    link: "https://wa.me/79998887766" 
+  }
+];
+
+export default function Contacts() {
+  return (
+    <section className="contacts" id="contact">
+      <Container maxWidth="md">
+        <Typography variant="h3" className="contacts__title">
+          Свяжитесь с нами
+        </Typography>
+        <Typography variant="h6" className="contacts__subtitle">
+          Обсудим ваш проект и предложим оптимальное решение
+        </Typography>
+        
+        <Grid container spacing={3}>
+          {contacts.map((contact, i) => (
+            <Grid item xs={12} sm={6} md={3} key={i}>
+              <Link href={contact.link} underline="none">
+                <Paper className="contact__card" elevation={2}>
+                  <Box className="contact__icon-wrapper">
+                    {contact.icon}
+                  </Box>
+                  <Typography className="contact__label">
+                    {contact.label}
+                  </Typography>
+                  <Typography className="contact__value">
+                    {contact.value}
+                  </Typography>
+                </Paper>
+              </Link>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </section>
+  );
+}
+
+Директория - D:\Programming\treer-digital-landing\treer-digital-landing\src\components\header
+
+Файл - header.css
+Код:
+.header__appbar {
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+}
+
+.header__logo {
+	width: 5rem;
+	color: #fff;
+}
+
+.header__appbar a {
+	color: #222;
+	text-decoration: none;
+	margin-left: 20px;
+	font-weight: 500;
+	font-size: 1.4rem;
+}
+
+.header__appbar a.active {
+	color: #2e7d32;
+	display: inline-block;
+	transform: scale(1.2);
+}
+
+.header__appbar a:hover {
+	color: #2e7d32;
+	transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+	.header__appbar a {
+		margin-left: 12px;
+		font-size: 0.9rem;
+	}
+}
+
+Файл - Header.jsx
+Код:
+import { AppBar, Toolbar, Link, Box } from "@mui/material";
+import React, { useEffect, useState } from "react";
+
+import logo from "../../assets/logo.svg";
+import "./header.css";
+
+export default function Header() {
+	const [activeId, setActiveId] = useState("intro");
+
+	useEffect(() => {
+		const sectionIds = ["intro", "services", "portfolio", "contact"];
+		const sections = sectionIds
+			.map((id) => document.getElementById(id))
+			.filter((el) => el);
+
+		if (sections.length === 0) return;
+
+		let ticking = false;
+		const getPageTop = (el) => el.getBoundingClientRect().top + window.scrollY;
+
+		const updateActive = () => {
+			const viewportAnchor = window.scrollY + window.innerHeight * 0.35; // 35% от верха окна
+			let current = sections[0].id;
+			for (const el of sections) {
+				if (getPageTop(el) <= viewportAnchor) current = el.id;
+			}
+			setActiveId(current);
+		};
+
+		const onScroll = () => {
+			if (!ticking) {
+				window.requestAnimationFrame(() => {
+					updateActive();
+					ticking = false;
+				});
+				ticking = true;
+			}
+		};
+
+		updateActive();
+		window.addEventListener("scroll", onScroll, { passive: true });
+		window.addEventListener("resize", updateActive);
+		return () => {
+			window.removeEventListener("scroll", onScroll);
+			window.removeEventListener("resize", updateActive);
+		};
+	}, []);
+
+	return (
+		<AppBar position="fixed" elevation={2} color="transparent" className="header__appbar">
+			<Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+				<img src={logo} alt="logo" className="header__logo" />
+				<Box>
+					<Link href="#intro" className={activeId === "intro" ? "active" : undefined}>О нас</Link>
+					<Link href="#services" className={activeId === "services" ? "active" : undefined}>Услуги</Link>
+					<Link href="#portfolio" className={activeId === "portfolio" ? "active" : undefined}>Портфолио</Link>
+					<Link href="#contact" className={activeId === "contact" ? "active" : undefined}>Контакты</Link>
+				</Box>
+			</Toolbar>
+		</AppBar>
+	);
+}
+
+
+Директория - D:\Programming\treer-digital-landing\treer-digital-landing\src\components\intro
+
+Файл - intro.css
+Код:
+.intro {
+	margin-top: 33px;
+  min-height: calc(100vh - 133px);
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding-top: 100px;
+}
+
+.intro__content {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.intro__title {
+  font-size: 3.5rem !important;
+  font-weight: 700 !important;
+  color: #1a1a1a !important;
+  margin-bottom: 1.5rem !important;
+  line-height: 1.2 !important;
+}
+
+.intro__subtitle {
+  font-size: 1.4rem !important;
+  color: #555 !important;
+  margin-bottom: 3rem !important;
+  line-height: 1.6 !important;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro__stats {
+  margin-top: 4rem !important;
+}
+
+.intro__stat {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.intro__stat-number {
+  font-size: 3rem !important;
+  font-weight: 700 !important;
+  color: #2e7d32 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.intro__stat-label {
+  font-size: 1.1rem !important;
+  color: #666 !important;
+}
+
+@media (max-width: 960px) {
+  .intro__title {
+    font-size: 2.5rem !important;
+  }
+  
+  .intro__subtitle {
+    font-size: 1.2rem !important;
+  }
+  
+  .intro__stat-number {
+    font-size: 2.5rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .intro {
+    padding-top: 80px;
+  }
+  
+  .intro__title {
+    font-size: 2rem !important;
+  }
+  
+  .intro__subtitle {
+    font-size: 1rem !important;
+  }
+  
+  .intro__stat-number {
+    font-size: 2rem !important;
+  }
+}
+
+Файл - Intro.jsx
+Код:
+
+import React from "react";
+import { Container, Typography, Box, Grid } from "@mui/material";
+import "./intro.css";
+
+export default function Intro() {
+	return (
+		<section className="intro" id="intro">
+			<Container maxWidth="lg">
+				<Box className="intro__content">
+					<Typography variant="h1" className="intro__title">
+						Treer — цифровое агентство полного цикла
+					</Typography>
+					<Typography variant="h5" className="intro__subtitle">
+						Мы проектируем, разрабатываем и запускаем программные продукты под ключ.
+						От идеи до масштабирования — с нами ваш бизнес получает надежные технологические решения.
+					</Typography>
+
+					<Grid container spacing={4} className="intro__stats">
+						<Grid item size={{ xs: 12, sm: 4 }}>
+							<Box className="intro__stat">
+								<Typography variant="h3" className="intro__stat-number">2+</Typography>
+								<Typography variant="body1" className="intro__stat-label">Года на рынке</Typography>
+							</Box>
+						</Grid>
+						<Grid item size={{ xs: 12, sm: 4 }}>
+							<Box className="intro__stat">
+								<Typography variant="h3" className="intro__stat-number">10+</Typography>
+								<Typography variant="body1" className="intro__stat-label">Реализованных проектов</Typography>
+							</Box>
+						</Grid>
+						<Grid item size={{ xs: 12, sm: 4 }}>
+							<Box className="intro__stat">
+								<Typography variant="h3" className="intro__stat-number">100%</Typography>
+								<Typography variant="body1" className="intro__stat-label">Довольных клиентов</Typography>
+							</Box>
+						</Grid>
+					</Grid>
+				</Box>
+			</Container>
+		</section>
+	);
+}
+
+
+Директория - D:\Programming\treer-digital-landing\treer-digital-landing\src\components\portfolio
+
+Файл - portfolio.css
+Код:
+.portfolio {
+  padding: 6rem 2rem;
+  background-color: #f5f7fa;
+}
+
+.portfolio__title {
+  font-size: 2.5rem !important;
+  text-align: center;
+  margin-bottom: 1rem !important;
+  color: #1a1a1a !important;
+  font-weight: 700 !important;
+}
+
+.portfolio__subtitle {
+  text-align: center;
+  color: #666 !important;
+  margin-bottom: 4rem !important;
+  font-size: 1.2rem !important;
+  font-weight: 400 !important;
+}
+
+.portfolio__card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease !important;
+  cursor: pointer;
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+.portfolio__card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15) !important;
+}
+
+.portfolio__card-header {
+  height: 8px;
+  width: 100%;
+}
+
+.portfolio__card-content {
+  padding: 2rem !important;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio__card-title {
+  font-size: 1.3rem !important;
+  margin-bottom: 1rem !important;
+  color: #1a1a1a !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+}
+
+.portfolio__card-desc {
+  color: #666 !important;
+  line-height: 1.6 !important;
+  margin-bottom: 1.5rem !important;
+  flex-grow: 1;
+  font-size: 0.95rem !important;
+}
+
+.portfolio__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.portfolio__tag {
+  background-color: #e8f5e9 !important;
+  color: #2e7d32 !important;
+  font-size: 0.8rem !important;
+}
+
+@media (max-width: 960px) {
+  .portfolio {
+    padding: 4rem 1.5rem;
+  }
+  
+  .portfolio__title {
+    font-size: 2rem !important;
+  }
+  
+  .portfolio__subtitle {
+    font-size: 1.1rem !important;
+    margin-bottom: 3rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio {
+    padding: 3rem 1rem;
+  }
+  
+  .portfolio__title {
+    font-size: 1.8rem !important;
+  }
+  
+  .portfolio__subtitle {
+    font-size: 1rem !important;
+  }
+  
+  .portfolio__card-content {
+    padding: 1.5rem !important;
+  }
+}
+
+Файл - Portfolio.jsx
+Код:
+import React from "react";
+import { Container, Grid, Card, CardContent, Typography, Chip, Box } from "@mui/material";
+import "./portfolio.css";
+
+const projects = [
+	{
+		title: "Система для автоматизации ресторанного бизнеса и QR-меню",
+		desc: "Комплексная система электронного меню с онлайн-заказами и оплатой. Включает аналитику, управление столами, ролевую модель, интеграцию с принтерами, программу лояльности и мультикухонный функционал.",
+		tags: ["React", "Node.js", "PostgreSQL", "Payment Gateway"],
+		color: "#ff6b6b"
+	},
+	{
+		title: "Плагин для Wildberries",
+		desc: "Инструмент автоматизации работы с маркетплейсом. Планировщик доставок товаров, аналитика продаж, управление остатками и оптимизация логистики для продавцов.",
+		tags: ["Chrome Extension", "API Integration", "Analytics"],
+		color: "#4ecdc4"
+	},
+	{
+		title: "Платформа найма персонала",
+		desc: "HR-система нового поколения для поиска и найма сотрудников. Функционал включает размещение вакансий, фильтрацию резюме, систему откликов и коммуникацию между работодателями и соискателями.",
+		tags: ["Vue.js", "Django", "ML Matching"],
+		color: "#95e1d3"
+	},
+	{
+		title: "Складская система",
+		desc: "Комплексное решение для управления складом с модулями продаж и глубокой аналитики. Учет товародвижения, автоматизация поставок, формирование отчетности и интеграция с 1С.",
+		tags: ["Angular", "FastAPI", "MongoDB"],
+		color: "#f38181"
+	},
+];
+
+export default function Portfolio() {
+	return (
+		<section className="portfolio" id="portfolio">
+			<Container maxWidth="lg">
+				<Typography variant="h3" className="portfolio__title">
+					Наши проекты
+				</Typography>
+				<Typography variant="h6" className="portfolio__subtitle">
+					Реальные кейсы, которые решают бизнес-задачи наших клиентов
+				</Typography>
+
+				<Grid container spacing={3}>
+					{projects.map((p, i) => (
+						<Grid item size={{ xs: 12, sm: 6, md: 3 }} key={i}>
+							<Card className="portfolio__card">
+								<Box
+									className="portfolio__card-header"
+									sx={{ backgroundColor: p.color }}
+								/>
+								<CardContent className="portfolio__card-content">
+									<Typography variant="h6" className="portfolio__card-title">
+										{p.title}
+									</Typography>
+									<Typography className="portfolio__card-desc">
+										{p.desc}
+									</Typography>
+									<Box className="portfolio__tags">
+										{p.tags.map((tag, j) => (
+											<Chip
+												key={j}
+												label={tag}
+												size="small"
+												className="portfolio__tag"
+											/>
+										))}
+									</Box>
+								</CardContent>
+							</Card>
+						</Grid>
+					))}
+				</Grid>
+			</Container>
+		</section>
+	);
+}
+
+Директория - D:\Programming\treer-digital-landing\treer-digital-landing\src\components\services
+
+Файл - config.jsx
+Код:
+import CodeIcon from '@mui/icons-material/Code';
+import PaletteIcon from '@mui/icons-material/Palette';
+import AccountTreeIcon from '@mui/icons-material/AccountTree';
+import LanguageIcon from '@mui/icons-material/Language';
+import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
+import IntegrationInstructionsIcon from '@mui/icons-material/IntegrationInstructions';
+
+export const SERVICES = [
+  { 
+    title: "Разработка ПО под ключ", 
+    desc: "Полный цикл создания программного обеспечения: от анализа бизнес-задачи и проектирования архитектуры до разработки, тестирования и запуска продукта.",
+    icon: <CodeIcon className="service__icon" />
+  },
+  { 
+    title: "UI/UX дизайн", 
+    desc: "Создаем понятные, стильные и конверсионные интерфейсы. Проводим UX-исследования и прототипирование для максимального удобства пользователей.",
+    icon: <PaletteIcon className="service__icon" />
+  },
+  { 
+    title: "Системное проектирование", 
+    desc: "Прорабатываем архитектуру и логику приложений с учетом масштабируемости. Выбираем оптимальный технологический стек под задачи бизнеса.",
+    icon: <AccountTreeIcon className="service__icon" />
+  },
+  { 
+    title: "Веб-приложения", 
+    desc: "Разрабатываем современные веб-приложения на React, Vue, Angular с адаптивным дизайном и высокой производительностью.",
+    icon: <LanguageIcon className="service__icon" />
+  },
+  { 
+    title: "Мобильные приложения", 
+    desc: "Создаем нативные и кроссплатформенные мобильные приложения для iOS и Android с безупречным UX.",
+    icon: <PhoneAndroidIcon className="service__icon" />
+  },
+  { 
+    title: "Интеграции и API", 
+    desc: "Интегрируем сторонние сервисы, разрабатываем собственные API, настраиваем взаимодействие систем для автоматизации процессов.",
+    icon: <IntegrationInstructionsIcon className="service__icon" />
+  }
+];
+
+Файл - services.css
+Код:
+.services {
+  padding: 6rem 2rem;
+  background-color: #fff;
+}
+
+.services__title {
+  font-size: 2.5rem !important;
+  text-align: center;
+  margin-bottom: 4rem !important;
+  color: #1a1a1a !important;
+  font-weight: 700 !important;
+}
+
+.service__card {
+  padding: 0.5rem 1rem !important;
+  text-align: center;
+  height: 100%;
+  transition: all 0.3s ease !important;
+  cursor: pointer;
+  background-color: #f9f9f9 !important;
+  border-radius: 12px !important;
+}
+
+.service__card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(46, 125, 50, 0.15) !important;
+}
+
+.service__icon-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.service__icon {
+  font-size: 3.5rem !important;
+  color: #2e7d32 !important;
+}
+
+.service__card-title {
+  font-size: 1.4rem !important;
+  margin-bottom: 1rem !important;
+  color: #2e7d32 !important;
+  font-weight: 600 !important;
+}
+
+.service__card-desc {
+  color: #666 !important;
+  line-height: 1.7 !important;
+  font-size: 1rem !important;
+}
+
+@media (max-width: 960px) {
+  .services {
+    padding: 4rem 1.5rem;
+  }
+  
+  .services__title {
+    font-size: 2rem !important;
+    margin-bottom: 3rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .services {
+    padding: 3rem 1rem;
+  }
+  
+  .services__title {
+    font-size: 1.8rem !important;
+  }
+  
+  .service__card {
+    padding: 2rem 1.5rem !important;
+  }
+  
+  .service__icon {
+    font-size: 3rem !important;
+  }
+}
+
+Файл - Services.jsx
+Код:
+import React from "react";
+import { Container, Grid, Typography, Paper, Box } from "@mui/material";
+
+import "./services.css";
+import {SERVICES} from "./config";
+
+
+export default function Services() {
+  return (
+    <section className="services" id="services">
+      <Container maxWidth="lg">
+        <Typography variant="h3" className="services__title">
+          Наши услуги
+        </Typography>
+        <Grid container spacing={3} rowSpacing={5}>
+          {SERVICES.map((s, i) => (
+            <Grid item size={{xs:12, md:4}} key={i}>
+              <Paper className="service__card" elevation={2}>
+                <Box className="service__icon-wrapper">
+                  {s.icon}
+                </Box>
+                <Typography variant="h5" className="service__card-title">
+                  {s.title}
+                </Typography>
+                <Typography className="service__card-desc">
+                  {s.desc}
+                </Typography>
+              </Paper>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </section>
+  );
+}

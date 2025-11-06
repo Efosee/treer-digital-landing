@@ -1,0 +1,277 @@
+.portfolio {
+	padding: 6rem 2rem;
+	background-color: #f5f7fa;
+}
+
+.portfolio__title {
+	font-size: 2.5rem !important;
+	text-align: center;
+	margin-bottom: 1rem !important;
+	color: #1a1a1a !important;
+	font-weight: 700 !important;
+}
+
+.portfolio__subtitle {
+	text-align: center;
+	color: #666 !important;
+	margin-bottom: 4rem !important;
+	font-size: 1.2rem !important;
+	font-weight: 400 !important;
+}
+
+.portfolio__card {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	transition: all 0.3s ease !important;
+	cursor: pointer;
+	border-radius: 12px !important;
+	overflow: hidden;
+	background-color: #fff !important;
+}
+
+.portfolio__card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15) !important;
+}
+
+.portfolio__card-header {
+	height: 8px;
+	width: 100%;
+}
+
+.portfolio__card-content {
+	padding: 2.5rem !important;
+	flex-grow: 1;
+}
+
+.portfolio__images {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 12px;
+	height: auto;
+	min-height: 0;
+	padding: 0;
+	overflow: hidden;
+	align-items: stretch;
+	justify-items: stretch;
+}
+
+.portfolio__image {
+	width: 100%;
+	height: auto;
+	border-radius: 12px;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+	transition: all 0.3s ease;
+	object-fit: cover;
+	display: block;
+}
+
+/* QR проект: QR1 и QR2 рядом слева, QR3 и QR4 налазят справа */
+.portfolio__images--qr {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 8px;
+	position: relative;
+	min-height: 150px;
+}
+
+.portfolio__images--qr .portfolio__image {
+	max-width: 150px;
+	width: auto;
+	height: auto;
+	flex-shrink: 0;
+}
+
+/* QR1 и QR2 рядом слева - стили применяются автоматически через flex */
+
+.portfolio__images--qr .portfolio__image:nth-child(3),
+.portfolio__images--qr .portfolio__image:nth-child(4) {
+	position: absolute;
+	right: 0;
+}
+
+.portfolio__images--qr .portfolio__image:nth-child(3) {
+	transform: translateX(-20px);
+	z-index: 2;
+}
+
+.portfolio__images--qr .portfolio__image:nth-child(4) {
+	transform: translateX(-40px);
+	z-index: 1;
+}
+
+/* WB проект: WB1 и WB3 в первой строке, WB2 и WB4 каждый на своей строке */
+.portfolio__images--wb {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto auto auto;
+	gap: 12px;
+}
+
+.portfolio__images--wb .portfolio__image:nth-child(1) {
+	grid-column: 1;
+	grid-row: 1;
+	min-width: 300px;
+	width: 100%;
+	max-width: 100%;
+}
+
+.portfolio__images--wb .portfolio__image:nth-child(2) {
+	grid-column: 1 / -1;
+	grid-row: 2;
+	width: 100%;
+	max-width: 100%;
+}
+
+.portfolio__images--wb .portfolio__image:nth-child(3) {
+	grid-column: 2;
+	grid-row: 1;
+	min-width: 300px;
+	width: 100%;
+	max-width: 100%;
+}
+
+.portfolio__images--wb .portfolio__image:nth-child(4) {
+	grid-column: 1 / -1;
+	grid-row: 3;
+	width: 100%;
+	max-width: 100%;
+}
+
+/* WMS проект: каждая картинка на своей строке */
+.portfolio__images--wms {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.portfolio__images--wms .portfolio__image {
+	width: 100%;
+	max-width: 100%;
+}
+
+.portfolio__card-title {
+	font-size: 1.5rem !important;
+	margin-bottom: 1.2rem !important;
+	color: #1a1a1a !important;
+	font-weight: 600 !important;
+	line-height: 1.3 !important;
+}
+
+.portfolio__card-desc {
+	color: #666 !important;
+	line-height: 1.7 !important;
+	margin-bottom: 1.5rem !important;
+	font-size: 1rem !important;
+}
+
+.portfolio__tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+	margin-top: auto;
+}
+
+.portfolio__tag {
+	background-color: #e8f5e9 !important;
+	color: #2e7d32 !important;
+	font-size: 0.85rem !important;
+	font-weight: 500 !important;
+}
+
+@media (max-width: 960px) {
+	.portfolio {
+		padding: 4rem 1.5rem;
+	}
+
+	.portfolio__title {
+		font-size: 2rem !important;
+	}
+
+	.portfolio__subtitle {
+		font-size: 1.1rem !important;
+		margin-bottom: 3rem !important;
+	}
+
+	.portfolio__images:not(.portfolio__images--qr):not(.portfolio__images--wb):not(.portfolio__images--wms) {
+		grid-template-columns: repeat(2, 1fr);
+		min-height: 0;
+		margin-bottom: 1.5rem;
+	}
+
+	.portfolio__images--wb {
+		grid-template-columns: 1fr;
+	}
+
+	.portfolio__images--wb .portfolio__image:nth-child(1),
+	.portfolio__images--wb .portfolio__image:nth-child(3) {
+		grid-column: 1;
+	}
+
+	.portfolio__images--wb .portfolio__image:nth-child(3) {
+		grid-row: 3;
+	}
+
+	.portfolio__images--wb .portfolio__image:nth-child(4) {
+		grid-row: 4;
+	}
+}
+
+@media (max-width: 600px) {
+	.portfolio {
+		padding: 3rem 1rem;
+	}
+
+	.portfolio__title {
+		font-size: 1.8rem !important;
+	}
+
+	.portfolio__subtitle {
+		font-size: 1rem !important;
+	}
+
+	.portfolio__card-content {
+		padding: 1.5rem !important;
+	}
+
+	.portfolio__images:not(.portfolio__images--qr):not(.portfolio__images--wb):not(.portfolio__images--wms) {
+		grid-template-columns: 1fr;
+		min-height: 0;
+		margin-bottom: 1rem;
+	}
+
+	.portfolio__images--qr {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.portfolio__images--qr .portfolio__image:nth-child(3),
+	.portfolio__images--qr .portfolio__image:nth-child(4) {
+		position: static;
+		transform: none;
+	}
+
+	.portfolio__images--wb {
+		grid-template-columns: 1fr;
+	}
+
+	.portfolio__images--wb .portfolio__image:nth-child(1),
+	.portfolio__images--wb .portfolio__image:nth-child(3) {
+		grid-column: 1;
+		min-width: auto;
+	}
+
+	.portfolio__images--wb .portfolio__image:nth-child(3) {
+		grid-row: 3;
+	}
+
+	.portfolio__images--wb .portfolio__image:nth-child(4) {
+		grid-row: 4;
+	}
+
+	.portfolio__card-title {
+		font-size: 1.3rem !important;
+	}
+}

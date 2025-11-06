@@ -1,0 +1,35 @@
+.header__appbar {
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+}
+
+.header__logo {
+	width: 5rem;
+	color: #fff;
+}
+
+.header__appbar a {
+	color: #222;
+	text-decoration: none;
+	margin-left: 20px;
+	font-weight: 500;
+	font-size: 1.4rem;
+}
+
+.header__appbar a.active {
+	color: #2e7d32;
+	display: inline-block;
+	transform: scale(1.2);
+}
+
+.header__appbar a:hover {
+	color: #2e7d32;
+	transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+	.header__appbar a {
+		margin-left: 12px;
+		font-size: 0.9rem;
+	}
+}
