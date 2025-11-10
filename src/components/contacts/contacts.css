@@ -20,9 +20,9 @@
 }
 
 .contact__card {
-  padding: 2rem 1.5rem !important;
+  padding: 1.8rem 1.2rem !important;
   text-align: center;
-  height: 100%;
+  height: 70%;
   transition: all 0.3s ease !important;
   cursor: pointer;
   background-color: #f9f9f9 !important;

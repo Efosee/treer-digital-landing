@@ -27,7 +27,6 @@ export const useSlider = (totalSlides) => {
 	const updateSlide = () => {
 		
 		if (containerRef.current) {
-			console.log("update", containerRef.current)
 			const offset = -currentSlide.current * 100;
 			containerRef.current.style.cssText = `transform: translateX(${offset}%); transition: transform 0.5s ease;`;
 		}

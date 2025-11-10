@@ -10,26 +10,26 @@ const contacts = [
 	{
 		icon: <PhoneIcon className="contact__icon" />,
 		label: "Телефон",
-		value: "+7 (999) 888-77-66",
-		link: "tel:+79998887766"
+		value: "+7 (968) 783-61-02",
+		link: "tel:+79687836102"
 	},
 	{
 		icon: <EmailIcon className="contact__icon" />,
 		label: "Email",
-		value: "info@treer.digital",
-		link: "mailto:info@treer.digital"
+		value: "info@treer.ru",
+		link: "mailto:info@treer.ru"
 	},
 	{
 		icon: <TelegramIcon className="contact__icon" />,
 		label: "Telegram",
-		value: "@treer_agency",
-		link: "https://t.me/treer_agency"
+		value: "Написать",
+		link: "https://t.me/79687836102"
 	},
 	{
 		icon: <WhatsAppIcon className="contact__icon" />,
 		label: "WhatsApp",
 		value: "Написать",
-		link: "https://wa.me/79998887766"
+		link: "https://wa.me/79687836102"
 	}
 ];
 

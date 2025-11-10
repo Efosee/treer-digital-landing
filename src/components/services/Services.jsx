@@ -17,7 +17,7 @@ export default function Services() {
             <Grid item size={{xs:12, md:4}} key={i}>
               <Paper className="service__card" elevation={2}>
                 <Box className="service__icon-wrapper">
-                  {s.icon}
+                  {<s.icon className="service__icon"/>}
                 </Box>
                 <Typography variant="h5" className="service__card-title">
                   {s.title}
