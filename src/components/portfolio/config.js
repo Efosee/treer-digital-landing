@@ -1,21 +1,28 @@
+// import images for food.treer
 import QR1 from "../../assets/portfolio/QR1.webp";
 import QR2 from "../../assets/portfolio/QR2.webp";
 import QR3 from "../../assets/portfolio/QR3.webp";
 import QR4 from "../../assets/portfolio/QR4.webp";
 
 
-// Импорт изображений Wildberries
+// import images for Wildberries Assistant
 import WB1 from "../../assets/portfolio/WB1.png";
 import WB2 from "../../assets/portfolio/WB2.png";
 import WB3 from "../../assets/portfolio/WB3.png";
 import WB4 from "../../assets/portfolio/WB4.png";
 
-// Импорт изображений складской системы
+// import images for WMS
 import WMS1 from "../../assets/portfolio/WMS1.png";
 import WMS2 from "../../assets/portfolio/WMS2.png";
 import WMS3 from "../../assets/portfolio/WMS3.png";
 import WMS4 from "../../assets/portfolio/WMS4.png";
 import WMS5 from "../../assets/portfolio/WMS5.png";
+
+// import images for recruitment platform
+import RP1 from "../../assets/portfolio/HR1.png";
+import RP2 from "../../assets/portfolio/HR2.png";
+import RP3 from "../../assets/portfolio/HR3.png";
+import RP4 from "../../assets/portfolio/HR4.png";
 
 export const projects = [
 	{
@@ -39,11 +46,7 @@ export const projects = [
 		desc: "HR-система для поиска и найма сотрудников. Функционал включает размещение вакансий, фильтрацию резюме, систему откликов и коммуникацию между работодателями и соискателями. Интеллектуальный подбор кандидатов.",
 		tags: ["Веб-платформа", "Адаптивная верстка", "Умный поиск", "Чат", "Фильтрация", "Личный кабинет", "Авторизация"],
 		color: "#95e1d3",
-		images: [
-			"https://placehold.co/600x400/95e1d3/white?text=Job+Board",
-			"https://placehold.co/600x400/a5e6d8/white?text=Resume+Filter",
-			"https://placehold.co/600x400/b5ebdd/white?text=Matching+System"
-		],
+		images: [RP1, RP2, RP3, RP4],
 		linkDetails: "https://food.treer.ru/"
 	},
 	{

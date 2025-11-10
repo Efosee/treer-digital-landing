@@ -20,16 +20,22 @@ import { projects } from "./config";
 
 
 export default function Portfolio() {
+	// State for managing slider opening in modal window
+	// Stores the index of the project for which the full-size slider is open
 	const [activeProjectIndex, setActiveProjectIndex] = useState(null);
 
+	// Handler for opening the slider: sets the project index for display in modal window
 	const handleOpenProject = (index) => {
 		setActiveProjectIndex(index);
 	};
 
+	// Handler for closing the modal window with slider
 	const handleClose = () => {
 		setActiveProjectIndex(null);
 	};
 
+	// Computed project for the slider in modal window
+	// Returns project data by index or null if slider is closed
 	const activeProject = useMemo(() => {
 		if (activeProjectIndex === null) {
 			return null;
@@ -64,8 +70,8 @@ export default function Portfolio() {
 											</Typography>
 											<Box sx={{
 												height: {
-													xs: i === 0 ? "50vh" : "40vw",
-													sm: i === 0 ? "50vh" : "40vh",
+													xs: i === 0 || i === 2 ? "50vh" : "40vw",
+													sm: i === 0 || i === 2 ? "50vh" : "40vh",
 													md: "50vh",
 												},
 											}}>
