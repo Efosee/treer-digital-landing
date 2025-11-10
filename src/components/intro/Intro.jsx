@@ -17,19 +17,19 @@ export default function Intro() {
 					</Typography>
 
 					<Grid container spacing={4} className="intro__stats">
-						<Grid item size={{ xs: 12, sm: 4 }}>
+						<Grid size={{ xs: 12, sm: 4 }}>
 							<Box className="intro__stat">
 								<Typography variant="h3" className="intro__stat-number">2+</Typography>
 								<Typography variant="body1" className="intro__stat-label">Года на рынке</Typography>
 							</Box>
 						</Grid>
-						<Grid item size={{ xs: 12, sm: 4 }}>
+						<Grid size={{ xs: 12, sm: 4 }}>
 							<Box className="intro__stat">
 								<Typography variant="h3" className="intro__stat-number">10+</Typography>
 								<Typography variant="body1" className="intro__stat-label">Реализованных проектов</Typography>
 							</Box>
 						</Grid>
-						<Grid item size={{ xs: 12, sm: 4 }}>
+						<Grid size={{ xs: 12, sm: 4 }}>
 							<Box className="intro__stat">
 								<Typography variant="h3" className="intro__stat-number">100%</Typography>
 								<Typography variant="body1" className="intro__stat-label">Довольных клиентов</Typography>
